@@ -17,7 +17,7 @@ const ProfileTemplateBlock = styled.div`
 `;
 
 function ProfileTemplate({ children }) {
-  return <ProfileTemplateBlock>{children}</ProfileTemplateBlock>;
+  return <ProfileTemplateBlock>{children} </ProfileTemplateBlock>;
 }
 
 export default ProfileTemplate;
