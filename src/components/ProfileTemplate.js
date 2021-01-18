@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import ProfileContents from "./ProfileContents";
 
 const ProfileTemplateBlock = styled.div`
   width: 512px;
-  height: 768px;
+  height: 512px;
 
   position: relative;
-  background: tomato;
 
   margin: 0 auto;
   margin-top: 24px;
