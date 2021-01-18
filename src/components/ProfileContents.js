@@ -6,17 +6,17 @@ const UserPhoto = styled.img`
   max-width: 160px;
   border-radius: 100%;
 
-  position: absolute;
+  position: relative;
   left: 50%;
   top: 5%;
   transform: translate(-50%, 0);
 `;
 
 const UserInfo = styled.h1`
-  position: absolute;
+  position: relative;
 
   left: 50%;
-  top: 50%;
+  top: 5%;
   transform: translate(-50%, 0);
 
   text-align: center;

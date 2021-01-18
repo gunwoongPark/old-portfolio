@@ -1,5 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import DevStackContents from "./components/DevStackContents";
 import DevStackTemplate from "./components/DevStackTemplate";
 import ProfileContents from "./components/ProfileContents";
 import ProfileTemplate from "./components/ProfileTemplate";
@@ -20,7 +21,9 @@ function App() {
       <ProfileTemplate>
         <ProfileContents />
       </ProfileTemplate>
-      <DevStackTemplate></DevStackTemplate>
+      <DevStackTemplate>
+        <DevStackContents />
+      </DevStackTemplate>
     </>
   );
 }

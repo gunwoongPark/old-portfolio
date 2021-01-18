@@ -1,21 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { useMediaQuery } from "react-responsive";
 
 const DevStackTemplateBlock = styled.div`
   width: 90%;
-  height: 300px;
+  height: 150px;
 
-  background: tomato;
+  position: relative;
 
-  border-radius: 16px;
-
-  position: absolute;
   left: 5%;
-  bottom: 5%;
+  margin-top: 265px;
 `;
 
-function DevStackTemplate({ children }) {
+function DevStackTemplate({ children, skills }) {
   return <DevStackTemplateBlock>{children}</DevStackTemplateBlock>;
 }
 
