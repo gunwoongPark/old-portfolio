@@ -5,10 +5,12 @@ const DevStackTemplateBlock = styled.div`
   width: 90%;
   height: 150px;
 
+  text-align: center;
+
   position: relative;
 
   left: 5%;
-  margin-top: 265px;
+  margin-top: 100px;
 `;
 
 function DevStackTemplate({ children, skills }) {

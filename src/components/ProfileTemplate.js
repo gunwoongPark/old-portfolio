@@ -8,7 +8,7 @@ const ProfileTemplateBlock = styled.div`
   position: relative;
 
   margin: 0 auto;
-  margin-top: 24px;
+  margin-top: 64px;
 
   display: flex;
   flex-direction: column;

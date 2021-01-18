@@ -4,6 +4,7 @@ import DevStackContents from "./components/DevStackContents";
 import DevStackTemplate from "./components/DevStackTemplate";
 import ProfileContents from "./components/ProfileContents";
 import ProfileTemplate from "./components/ProfileTemplate";
+import SideBar from "./components/SideBar";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <SideBar />
       <ProfileTemplate>
         <ProfileContents />
       </ProfileTemplate>

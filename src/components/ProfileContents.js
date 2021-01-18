@@ -1,33 +1,65 @@
 import React from "react";
 import styled from "styled-components";
 import userImgSrc from "../assets/user.png";
+import { SiGithub } from "react-icons/si";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
 
-const UserPhoto = styled.img`
-  max-width: 160px;
-  border-radius: 100%;
+const PhotoFrame = styled.div`
+  height: 180px;
+  width: 180px;
+  overflow: hidden;
+
+  border-radius: 50%;
 
   position: relative;
+
   left: 50%;
-  top: 5%;
   transform: translate(-50%, 0);
+`;
+
+const UserPhoto = styled.img`
+  max-width: 100%;
+  height: auto;
 `;
 
 const UserInfo = styled.h1`
   position: relative;
-
   left: 50%;
-  top: 5%;
   transform: translate(-50%, 0);
-
   text-align: center;
-
   color: #495057;
+  line-height: 175%;
+`;
+
+const LinkBtnGroup = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const LinkBtn = styled.button`
+  color: #495057;
+  background: #f8f9fa;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover {
+    background: white;
+  }
+
+  &:active {
+    background: #e9ecef;
+  }
 `;
 
 function ProfileContents({ children }) {
   return (
     <>
-      <UserPhoto src={userImgSrc}></UserPhoto>
+      <PhotoFrame>
+        <UserPhoto src={userImgSrc}></UserPhoto>
+      </PhotoFrame>
       <UserInfo>
         gunwoongPark
         <br />
@@ -35,6 +67,20 @@ function ProfileContents({ children }) {
         <br />
         Front-End
       </UserInfo>
+
+      <LinkBtnGroup>
+        <LinkBtn onClick={() => console.log("git!")}>
+          <SiGithub size="50" />
+        </LinkBtn>
+
+        <LinkBtn onClick={() => console.log("kakao!")}>
+          <RiKakaoTalkFill size="50" />
+        </LinkBtn>
+
+        <LinkBtn>
+          <MdEmail size="50" />
+        </LinkBtn>
+      </LinkBtnGroup>
     </>
   );
 }
