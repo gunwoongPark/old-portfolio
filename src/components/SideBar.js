@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useState, useEffect } from "react";
+import styled, { keyframes, css } from "styled-components";
 import BtnItem from "./BtnItem";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
@@ -12,12 +12,30 @@ const fadeIn = keyframes`
     }
 `;
 
+const fadeOut = keyframes`
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+`;
+
 const slideRight = keyframes`
     from{
         transform: translateX(-260px)
     }
     to{
         transform: translateX(0px);
+    }
+`;
+
+const slideLeft = keyframes`
+    from{
+        transform: translateX(0px)
+    }
+    to{
+        transform: translateX(-260px);
     }
 `;
 
@@ -75,6 +93,12 @@ const CloseBtn = styled.button`
   animation-timing-function: ease-out;
   animation-name: ${slideRight};
   animation-fill-mode: forwards;
+
+  ${(props) =>
+    props.disappear &&
+    css`
+      animation-name: ${slideLeft};
+    `}
 `;
 
 const DarkBackground = styled.div`
@@ -89,6 +113,12 @@ const DarkBackground = styled.div`
   animation-timing-function: ease-out;
   animation-name: ${fadeIn};
   animation-fill-mode: forwards;
+
+  ${(props) =>
+    props.disappear &&
+    css`
+      animation-name: ${fadeOut};
+    `}
 `;
 
 const SidebarBlock = styled.div`
@@ -101,6 +131,12 @@ const SidebarBlock = styled.div`
   animation-timing-function: ease-out;
   animation-name: ${slideRight};
   animation-fill-mode: forwards;
+
+  ${(props) =>
+    props.disappear &&
+    css`
+      animation-name: ${slideLeft};
+    `}
 `;
 
 const BtnGroup = styled.div`
@@ -115,35 +151,42 @@ function SideBar({
   openSidebar,
   closeSlidebar,
 }) {
-  function clickOutside(e) {
-    console.log("background!");
-  }
-  return (
-    <>
-      {!visible && (
-        <OpenBtn onClick={openSidebar}>
-          <MdNavigateNext size="40" />
-        </OpenBtn>
-      )}
+  const [animate, setAnimate] = useState(false);
+  const [localVisible, setLocalVisible] = useState(visible);
 
-      {visible && (
-        <DarkBackground onClick={clickOutside}>
-          <CloseBtn onClick={closeSlidebar}>
-            <MdNavigateBefore size="40" />
-          </CloseBtn>
-          <SidebarBlock>
-            <BtnGroup>
-              {sidebarItem.map((item, index) => (
-                <BtnItem key={index} selectBtn={selectBtn}>
-                  {item}
-                </BtnItem>
-              ))}
-            </BtnGroup>
-          </SidebarBlock>
-        </DarkBackground>
-      )}
-    </>
-  );
+  useEffect(() => {
+    // visible true -> false
+    if (localVisible && !visible) {
+      setAnimate(true);
+      setTimeout(() => setAnimate(false), 250);
+    }
+    setLocalVisible(visible);
+  }, [localVisible, visible]);
+
+  if (!localVisible && !animate) {
+    return (
+      <OpenBtn onClick={openSidebar}>
+        <MdNavigateNext size="40" />
+      </OpenBtn>
+    );
+  } else {
+    return (
+      <DarkBackground disappear={!visible}>
+        <CloseBtn onClick={closeSlidebar} disappear={!visible}>
+          <MdNavigateBefore size="40" />
+        </CloseBtn>
+        <SidebarBlock disappear={!visible}>
+          <BtnGroup>
+            {sidebarItem.map((item, index) => (
+              <BtnItem key={index} selectBtn={selectBtn}>
+                {item}
+              </BtnItem>
+            ))}
+          </BtnGroup>
+        </SidebarBlock>
+      </DarkBackground>
+    );
+  }
 }
 
 export default SideBar;
