@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import DevStack from "./components/DevStack";
+import FunCoolSemtle from "./components/FunCoolSemtle";
 import Profile from "./components/Profile";
 
 import Sidebar from "./components/Sidebar";
@@ -47,6 +48,8 @@ function App() {
           <DevStack />
         </>
       ) : null}
+
+      {curPage === "Fun Cool Semtle" ? <FunCoolSemtle /> : null}
 
       <Sidebar
         visible={sidebar}
