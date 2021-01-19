@@ -24,6 +24,7 @@ const UserPhoto = styled.img`
 `;
 
 const UserInfo = styled.h1`
+  font-family: "Roboto Mono", monospace;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0);
@@ -69,7 +70,7 @@ function ProfileContents({ children }) {
       </UserInfo>
 
       <LinkBtnGroup>
-        <LinkBtn onClick={() => console.log("git!")}>
+        <LinkBtn>
           <SiGithub size="50" />
         </LinkBtn>
 
