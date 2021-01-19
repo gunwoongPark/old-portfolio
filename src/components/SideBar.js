@@ -150,6 +150,7 @@ function SideBar({
   selectBtn,
   openSidebar,
   closeSlidebar,
+  selectedMenu,
 }) {
   const [animate, setAnimate] = useState(false);
   const [localVisible, setLocalVisible] = useState(visible);
@@ -178,7 +179,11 @@ function SideBar({
         <SidebarBlock disappear={!visible}>
           <BtnGroup>
             {sidebarItem.map((item, index) => (
-              <BtnItem key={index} selectBtn={selectBtn}>
+              <BtnItem
+                key={index}
+                selectBtn={selectBtn}
+                selectedMenu={selectedMenu}
+              >
                 {item}
               </BtnItem>
             ))}

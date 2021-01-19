@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
-import DevStackContents from "./components/DevStackContents";
-import DevStackTemplate from "./components/DevStackTemplate";
-import ProfileContents from "./components/ProfileContents";
-import ProfileTemplate from "./components/ProfileTemplate";
+import DevStack from "./components/DevStack";
+import Profile from "./components/Profile";
+
 import Sidebar from "./components/Sidebar";
 
 const GlobalStyle = createGlobalStyle`
@@ -13,35 +12,41 @@ body{
 `;
 
 function App() {
+  const [curPage, setCurPage] = useState("Information");
   const [sidebar, setSidebar] = useState(false);
-  const openSidebar = () => {
-    setSidebar(true);
-  };
+
   const sidebarItem = [
+    "Information",
     "Fun Cool Semtle",
     "Vueticky Note",
     "dummy1",
     "dummy2",
     "dummy3",
   ];
-  const selectBtn = () => {
+
+  const openSidebar = () => {
+    setSidebar(true);
+  };
+
+  const closeSlidebar = () => {
     setSidebar(false);
   };
-  const closeSlidebar = () => {
+
+  const selectBtn = (e) => {
+    setCurPage(e.target.innerText);
     setSidebar(false);
   };
 
   return (
     <>
       <GlobalStyle />
+      {curPage === "Information" ? (
+        <>
+          <Profile />
 
-      <ProfileTemplate>
-        <ProfileContents />
-      </ProfileTemplate>
-
-      <DevStackTemplate>
-        <DevStackContents />
-      </DevStackTemplate>
+          <DevStack />
+        </>
+      ) : null}
 
       <Sidebar
         visible={sidebar}
@@ -49,6 +54,7 @@ function App() {
         selectBtn={selectBtn}
         openSidebar={openSidebar}
         closeSlidebar={closeSlidebar}
+        selectedMenu={curPage}
       />
     </>
   );

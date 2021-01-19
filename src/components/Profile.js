@@ -5,6 +5,19 @@ import { SiGithub } from "react-icons/si";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 
+const ProfileBlock = styled.div`
+  width: 512px;
+  height: 512px;
+
+  position: relative;
+
+  margin: 0 auto;
+  margin-top: 64px;
+
+  display: flex;
+  flex-direction: column;
+`;
+
 const PhotoFrame = styled.div`
   height: 180px;
   width: 180px;
@@ -55,9 +68,9 @@ const LinkBtn = styled.button`
   }
 `;
 
-function ProfileContents({ children }) {
+function Profile({ children }) {
   return (
-    <>
+    <ProfileBlock>
       <PhotoFrame>
         <UserPhoto src={userImgSrc}></UserPhoto>
       </PhotoFrame>
@@ -82,8 +95,8 @@ function ProfileContents({ children }) {
           <MdEmail size="50" />
         </LinkBtn>
       </LinkBtnGroup>
-    </>
+    </ProfileBlock>
   );
 }
 
-export default ProfileContents;
+export default Profile;
