@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import userImgSrc from "../assets/user.png";
+import userImgSrc from "../assets/User2.jpg";
 import { SiGithub } from "react-icons/si";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 
 const ProfileBlock = styled.div`
   width: 512px;
-  height: 512px;
+  height: 600px;
 
   position: relative;
 
@@ -18,32 +18,32 @@ const ProfileBlock = styled.div`
   flex-direction: column;
 `;
 
-const PhotoFrame = styled.div`
-  height: 180px;
-  width: 180px;
-  overflow: hidden;
-
+const UserPhoto = styled.img`
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 50%;
 
   position: relative;
-
-  left: 50%;
-  transform: translate(-50%, 0);
+  align-self: center;
 `;
 
-const UserPhoto = styled.img`
-  max-width: 100%;
-  height: auto;
+const UserName = styled.h1`
+  font-family: "Roboto Mono", monospace;
+  position: relative;
+  text-align: center;
+  color: #495057;
+
+  font-size: 48px;
 `;
 
 const UserInfo = styled.h1`
   font-family: "Roboto Mono", monospace;
   position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
   text-align: center;
   color: #495057;
-  line-height: 175%;
+  line-height: 150%;
 `;
 
 const LinkBtnGroup = styled.div`
@@ -71,15 +71,14 @@ const LinkBtn = styled.button`
 function Profile({ children }) {
   return (
     <ProfileBlock>
-      <PhotoFrame>
-        <UserPhoto src={userImgSrc}></UserPhoto>
-      </PhotoFrame>
+      <UserPhoto src={userImgSrc}></UserPhoto>
+      <UserName> Park Gun Woong</UserName>
       <UserInfo>
-        gunwoongPark
-        <br />
         97.08.07
         <br />
-        Front-End
+        Front-End Developer
+        <br />
+        +82 10-5217-5646
       </UserInfo>
 
       <LinkBtnGroup>

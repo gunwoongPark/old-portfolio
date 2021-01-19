@@ -5,7 +5,7 @@ import dummy from "../assets/dummy.PNG";
 const Contain = styled.div`
   position: relative;
   margin: 0 auto;
-  width: 1280px;
+  width: 1024px;
 
   display: flex;
   flex-direction: column;
@@ -39,8 +39,6 @@ function FunCoolSemtle() {
         <MainPhotoFrame>
           <MainPhoto src={dummy}></MainPhoto>
         </MainPhotoFrame>
-
-        
       </Contain>
     </>
   );

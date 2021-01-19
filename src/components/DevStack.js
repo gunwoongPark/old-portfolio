@@ -10,19 +10,16 @@ import pythonIcon from "../assets/python.png";
 import cIcon from "../assets/c++.png";
 
 const DevStackBlock = styled.div`
-  width: 90%;
-  height: 150px;
+  width: 100%;
+  height: 120px;
+  display: flex;
 
-  text-align: center;
-
-  position: relative;
-
-  left: 5%;
-  margin-top: 100px;
+  margin-top: 120px;
+  justify-content: center;
 `;
 
 const SkillIcon = styled.img`
-  width: 150px;
+  width: 120px;
 
   & + & {
     margin-left: 10px;
