@@ -14,7 +14,7 @@ const Contain = styled.div`
 const TitleText = styled.h1`
   margin-top: 64px;
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Nanum Gothic Coding", monospace;
 `;
 
 const MainPhotoFrame = styled.div`

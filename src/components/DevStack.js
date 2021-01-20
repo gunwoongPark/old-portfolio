@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import htmlIcon from "../assets/html.png";
 import cssIcon from "../assets/css.png";
@@ -14,7 +14,7 @@ const DevStackBlock = styled.div`
   height: 120px;
   display: flex;
 
-  margin-top: 120px;
+  margin-top: 50px;
   justify-content: center;
 `;
 

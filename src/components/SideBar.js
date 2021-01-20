@@ -40,12 +40,12 @@ const slideLeft = keyframes`
 `;
 
 const OpenBtn = styled.button`
-  background: #f8f9fa;
+  background: #e9ecef;
   &:hover {
-    background: white;
+    background: #f8f9fa;
   }
   &:active {
-    background: #e9ecef;
+    background: #ced4da;
   }
 
   cursor: pointer;
@@ -65,13 +65,13 @@ const OpenBtn = styled.button`
 `;
 
 const CloseBtn = styled.button`
-  background: white;
+  background: #e9ecef;
   &:hover {
-    background: #f1f3f5;
+    background: #f8f9fa;
   }
 
   &:active {
-    background: #f8f9fa;
+    background: #ced4da;
   }
 
   cursor: pointer;
@@ -125,7 +125,7 @@ const SidebarBlock = styled.div`
   width: 260px;
   height: 100%;
   padding: 1.5rem;
-  background: white;
+  background: #e9ecef;
 
   animation-duration: 0.25s;
   animation-timing-function: ease-out;

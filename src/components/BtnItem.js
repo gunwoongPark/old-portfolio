@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
-  background: white;
+  background: #e9ecef;
   outline: 0;
   border: 0;
   & + & {
@@ -10,14 +10,14 @@ const Button = styled.button`
   }
 
   &:hover {
-    background: #f1f3f5;
-  }
-
-  &:active {
     background: #f8f9fa;
   }
 
-  font-family: "Roboto Mono", monospace;
+  &:active {
+    background: #ced4da;
+  }
+
+  font-family: "Nanum Gothic Coding", monospace;
   font-size: 24px;
   padding: 0.75rem;
 
@@ -39,7 +39,7 @@ const CheckedBtn = styled.button`
     background: #ff8787;
   }
 
-  font-family: "Roboto Mono", monospace;
+  font-family: "Nanum Gothic Coding", monospace;
   font-size: 24px;
   padding: 0.75rem;
 

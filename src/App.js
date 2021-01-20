@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
-import DevStack from "./components/DevStack";
 import FunCoolSemtle from "./components/FunCoolSemtle";
 import Profile from "./components/Profile";
-
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/SideBar";
+import { useMediaQuery } from "react-responsive";
 
 const GlobalStyle = createGlobalStyle`
 body{
-  background: #f8f9fa; 
+  background: #e9ecef; 
 }
 `;
 
@@ -20,10 +19,26 @@ function App() {
     "Information",
     "Fun Cool Semtle",
     "Vueticky Note",
-    "dummy1",
+    "Dev Stack",
     "dummy2",
     "dummy3",
   ];
+
+  const isPc = useMediaQuery({
+    query: "(min-width:1024px)",
+  });
+  const isTablet = useMediaQuery({
+    query: "(min-width:768px) and (max-width:1023px)",
+  });
+  const isMobile = useMediaQuery({
+    query: "(max-width:767px)",
+  });
+
+  useEffect(() => {
+    console.log(isPc);
+    console.log(isTablet);
+    console.log(isMobile);
+  });
 
   const openSidebar = () => {
     setSidebar(true);
@@ -41,16 +56,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      {curPage === "Information" ? (
-        <>
-          <Profile />
 
-          <DevStack />
-        </>
-      ) : null}
+      {/* 인포 */}
+      {curPage === "Information" ? <Profile /> : null}
 
       {curPage === "Fun Cool Semtle" ? <FunCoolSemtle /> : null}
 
+      {/* 사이드바 */}
       <Sidebar
         visible={sidebar}
         sidebarItem={sidebarItem}
