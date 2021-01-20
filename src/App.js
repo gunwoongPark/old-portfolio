@@ -35,9 +35,9 @@ function App() {
   });
 
   useEffect(() => {
-    console.log(isPc);
-    console.log(isTablet);
-    console.log(isMobile);
+    console.log("PC : " + isPc);
+    console.log("Tablet : " + isTablet);
+    console.log("Mobile : " + isMobile);
   });
 
   const openSidebar = () => {
