@@ -54,7 +54,7 @@ const ProfileBlock = styled.div`
       border: none;
       background: #e9ecef;
 
-      max-height: 607px;
+      width: 100%;
     `}
 `;
 
