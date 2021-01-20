@@ -61,7 +61,7 @@ const OpenBtn = styled.button`
   top: 1%;
   left: 1%;
 
-  color: #495057;
+  color: #343a40;
 `;
 
 const CloseBtn = styled.button`
@@ -87,7 +87,7 @@ const CloseBtn = styled.button`
   top: 1%;
   left: 320px;
 
-  color: #495057;
+  color: #343a40;
 
   animation-duration: 0.25s;
   animation-timing-function: ease-out;

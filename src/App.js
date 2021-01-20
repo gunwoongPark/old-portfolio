@@ -12,11 +12,12 @@ body{
 `;
 
 function App() {
-  const [curPage, setCurPage] = useState("Information");
+  const [curPage, setCurPage] = useState("Profile");
   const [sidebar, setSidebar] = useState(false);
+  const [mode, setMode] = useState("");
 
   const sidebarItem = [
-    "Information",
+    "Profile",
     "Fun Cool Semtle",
     "Vueticky Note",
     "Dev Stack",
@@ -35,10 +36,10 @@ function App() {
   });
 
   useEffect(() => {
-    console.log("PC : " + isPc);
-    console.log("Tablet : " + isTablet);
-    console.log("Mobile : " + isMobile);
-  });
+    if (isPc) setMode("isPc");
+    else if (isTablet) setMode("isTablet");
+    else setMode("isMobile");
+  }, [isPc, isTablet]);
 
   const openSidebar = () => {
     setSidebar(true);
@@ -58,7 +59,7 @@ function App() {
       <GlobalStyle />
 
       {/* 인포 */}
-      {curPage === "Information" ? <Profile /> : null}
+      {curPage === "Profile" ? <Profile mode={mode} /> : null}
 
       {curPage === "Fun Cool Semtle" ? <FunCoolSemtle /> : null}
 

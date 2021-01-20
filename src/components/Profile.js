@@ -26,27 +26,34 @@ const fadeOut = keyframes`
 const ProfileBlock = styled.div`
   background: white;
 
+  width: 500px;
+  border: 2px solid#343a40;
+  border-radius: 1rem;
+
   position: relative;
 
   left: 50%;
   transform: translate(-50%);
 
-  margin-top: 72px;
-
   display: flex;
   flex-direction: column;
+
+  margin-top: 72px;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-name: ${fadeIn};
   animation-fill-mode: forwards;
 
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
-  width: 500px;
-  border: 2px solid#343a40;
-  border-radius: 1rem;
+  ${(props) =>
+    props.mode === "isMobile" &&
+    css`
+      border: none;
+      background: #e9ecef;
+    `}
 `;
 
 const UserPhoto = styled.img`
@@ -85,25 +92,23 @@ const LinkBtnGroup = styled.div`
 
 const LinkBtn = styled.button`
   color: #343a40;
-  background: #f8f9fa;
+  background: white;
   border: 0;
   outline: 0;
   cursor: pointer;
   border-radius: 50%;
 
-  &:hover {
-    background: white;
-  }
-
-  &:active {
-    background: #e9ecef;
-  }
+  ${(props) =>
+    props.mode === "isMobile" &&
+    css`
+      background: #e9ecef;
+    `}
 `;
 
-function Profile() {
+function Profile({ mode }) {
   return (
     <>
-      <ProfileBlock>
+      <ProfileBlock mode={mode}>
         <UserPhoto src={userImgSrc}></UserPhoto>
 
         <UserInfo uName={true}> Park Gun Woong</UserInfo>
@@ -114,15 +119,15 @@ function Profile() {
         <UserInfo>+82 10-5217-5646</UserInfo>
 
         <LinkBtnGroup>
-          <LinkBtn>
+          <LinkBtn mode={mode}>
             <SiGithub size="50" />
           </LinkBtn>
 
-          <LinkBtn>
+          <LinkBtn mode={mode}>
             <AiFillInstagram size="50" />
           </LinkBtn>
 
-          <LinkBtn>
+          <LinkBtn mode={mode}>
             <MdEmail size="50" />
           </LinkBtn>
         </LinkBtnGroup>
