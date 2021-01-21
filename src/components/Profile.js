@@ -55,6 +55,8 @@ const ProfileBlock = styled.div`
       background: #e9ecef;
 
       width: 100%;
+
+      margin-top: 36px;
     `}
 `;
 
@@ -76,11 +78,18 @@ const UserInfo = styled.h1`
   color: #343a40;
 
   font-size: 24px;
+  line-height: 125%;
 
   ${(props) =>
     props.uName &&
     css`
       font-size: 32px;
+    `}
+
+  ${(props) =>
+    props.mode === "isMobile" &&
+    css`
+      line-height: 100%;
     `}
 `;
 
@@ -113,12 +122,14 @@ function Profile({ mode }) {
       <ProfileBlock mode={mode}>
         <UserPhoto src={userImgSrc}></UserPhoto>
 
-        <UserInfo uName={true}> Park Gun Woong</UserInfo>
-
-        <UserInfo>97.08.07</UserInfo>
-        <UserInfo>금오공과대학교</UserInfo>
-        <UserInfo>컴퓨터공학과</UserInfo>
-        <UserInfo>+82 10-5217-5646</UserInfo>
+        <UserInfo uName={true} mode={mode}>
+          Park Gun Woong
+        </UserInfo>
+        <UserInfo mode={mode}>Prospective Front-End Developer</UserInfo>
+        <UserInfo mode={mode}>97.08.07</UserInfo>
+        <UserInfo mode={mode}>금오공과대학교</UserInfo>
+        <UserInfo mode={mode}>컴퓨터공학과</UserInfo>
+        <UserInfo mode={mode}>+82 10-5217-5646</UserInfo>
 
         <LinkBtnGroup>
           <LinkBtn mode={mode}>
