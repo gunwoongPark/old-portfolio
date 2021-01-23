@@ -72,13 +72,12 @@ const UserPhoto = styled.img`
 `;
 
 const UserInfo = styled.h1`
-  font-family: "Nanum Gothic Coding", monospace;
   position: relative;
   text-align: center;
   color: #343a40;
 
   font-size: 24px;
-  line-height: 125%;
+  line-height: 225%;
 
   ${(props) =>
     props.uName &&
@@ -89,7 +88,7 @@ const UserInfo = styled.h1`
   ${(props) =>
     props.mode === "isMobile" &&
     css`
-      line-height: 100%;
+      line-height: 200%;
     `}
 `;
 

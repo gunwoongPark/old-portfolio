@@ -16,7 +16,6 @@ const Button = styled.button`
     background: #ced4da;
   }
 
-  font-family: "Nanum Gothic Coding", monospace;
   font-size: 24px;
   padding: 0.75rem;
 
@@ -38,7 +37,6 @@ const CheckedBtn = styled.button`
     background: #ff8787;
   }
 
-  font-family: "Nanum Gothic Coding", monospace;
   font-size: 24px;
   padding: 0.75rem;
 
