@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { createGlobalStyle } from "styled-components";
-import FunCoolSemtle from "./components/FunCoolSemtle";
 import Profile from "./components/Profile";
 import Sidebar from "./components/SideBar";
 import { useMediaQuery } from "react-responsive";
+import DevStack from "./components/DevStack";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -18,9 +18,9 @@ function App() {
 
   const sidebarItem = [
     "Profile",
-    "Fun Cool Semtle",
-    "Vueticky Note",
     "Dev Stack",
+    "Project",
+    "dummy1",
     "dummy2",
     "dummy3",
   ];
@@ -61,7 +61,7 @@ function App() {
       {/* 인포 */}
       {curPage === "Profile" ? <Profile mode={mode} /> : null}
 
-      {curPage === "Fun Cool Semtle" ? <FunCoolSemtle /> : null}
+      {curPage === "Dev Stack" ? <DevStack /> : null}
 
       {/* 사이드바 */}
       <Sidebar

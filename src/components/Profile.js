@@ -132,10 +132,13 @@ function Profile({ mode }) {
         <UserInfo mode={mode}>+82 10-5217-5646</UserInfo>
 
         <LinkBtnGroup>
-          <LinkBtn mode={mode}>
-            <SiGithub size="50" />
-          </LinkBtn>
+          <a href="https://github.com/gunwoongPark" target="__blank">
+            <LinkBtn mode={mode}>
+              <SiGithub size="50"></SiGithub>
+            </LinkBtn>
+          </a>
 
+          <a href=""></a>
           <LinkBtn mode={mode}>
             <AiFillInstagram size="50" />
           </LinkBtn>
