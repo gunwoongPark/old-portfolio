@@ -38,8 +38,8 @@ function App() {
   useEffect(() => {
     if (isPc) setMode("isPc");
     else if (isTablet) setMode("isTablet");
-    else setMode("isMobile");
-  }, [isPc, isTablet]);
+    else if (isMobile) setMode("isMobile");
+  }, [isMobile, isPc, isTablet]);
 
   const openSidebar = () => {
     setSidebar(true);

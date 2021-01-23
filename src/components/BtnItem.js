@@ -5,9 +5,8 @@ const Button = styled.button`
   background: #e9ecef;
   outline: 0;
   border: 0;
-  & + & {
-    margin-top: 1rem;
-  }
+
+  margin-top: 1rem;
 
   &:hover {
     background: #f8f9fa;
@@ -29,7 +28,7 @@ const CheckedBtn = styled.button`
   outline: 0;
   border: 0;
 
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0 0 0;
 
   &:hover {
     background: #ffc9c9;
