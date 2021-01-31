@@ -55,6 +55,17 @@ const SkillIconBlock = styled.div`
 `;
 
 function DevStack() {
+  const contentsArr = [
+    { imgSrc: htmlIcon, tooltipText: "HTML" },
+    { imgSrc: cssIcon, tooltipText: "CSS" },
+    { imgSrc: jsIcon, tooltipText: "JavaScript" },
+    { imgSrc: vueIcon, tooltipText: "Vue.js" },
+    { imgSrc: vuetifyIcon, tooltipText: "Vuetify" },
+    { imgSrc: reactIcon, tooltipText: "React" },
+    { imgSrc: bootstrapIcon, tooltipText: "Bootstrap" },
+    { imgSrc: pythonIcon, tooltipText: "Python" },
+    { imgSrc: cIcon, tooltipText: "C++" },
+  ];
   return (
     <Container>
       <DevStackBlock className="container">
@@ -62,21 +73,19 @@ function DevStack() {
           <div className="col-1"></div>
 
           <SkillIconBlock className="col-10">
-            <OverlayTrigger
-              placement={"right"}
-              overlay={<Tooltip id={"tooltip-right"}>HTML</Tooltip>}
-            >
-              <SkillIcon src={htmlIcon} alt="test" />
-            </OverlayTrigger>
-
-            <SkillIcon src={cssIcon} alt="test" />
-            <SkillIcon src={jsIcon} alt="test" />
-            <SkillIcon src={vueIcon} alt="test" />
-            <SkillIcon src={vuetifyIcon} alt="test" />
-            <SkillIcon src={reactIcon} alt="test" />
-            <SkillIcon src={bootstrapIcon} alt="test" />
-            <SkillIcon src={pythonIcon} alt="test" />
-            <SkillIcon src={cIcon} alt="test" />
+            {contentsArr.map((el, idx) => {
+              return (
+                <OverlayTrigger
+                  placement={"right"}
+                  overlay={
+                    <Tooltip id={"tooltip-right"}>{el.tooltipText}</Tooltip>
+                  }
+                  key={idx}
+                >
+                  <SkillIcon src={el.imgSrc} alt="test" />
+                </OverlayTrigger>
+              );
+            })}
           </SkillIconBlock>
 
           <div className="col-1"></div>
