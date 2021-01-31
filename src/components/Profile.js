@@ -119,7 +119,7 @@ function Profile({ mode }) {
   return (
     <>
       <ProfileBlock mode={mode}>
-        <UserPhoto src={userImgSrc}></UserPhoto>
+        <UserPhoto src={userImgSrc} />
 
         <UserInfo uName={true} mode={mode}>
           Park Gun Woong

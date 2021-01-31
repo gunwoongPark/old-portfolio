@@ -12,16 +12,12 @@ import vuetifyIcon from "../assets/vuetify.svg";
 import bootstrapIcon from "../assets/bootstrap.svg";
 
 const DevStackBlock = styled.div`
-  width: 80%;
-
   position: absolute;
   top: 50%;
-  left: 10%;
 
   transform: translate(0, -50%);
 
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `;
 
 const SkillIcon = styled.img`
@@ -33,19 +29,26 @@ const SkillIcon = styled.img`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 function DevStack() {
   return (
-    <DevStackBlock>
-      <SkillIcon src={htmlIcon} alt="test"></SkillIcon>
-      <SkillIcon src={cssIcon} alt="test"></SkillIcon>
-      <SkillIcon src={jsIcon} alt="test"></SkillIcon>
-      <SkillIcon src={vueIcon} alt="test"></SkillIcon>
-      <SkillIcon src={vuetifyIcon} alt="test"></SkillIcon>
-      <SkillIcon src={reactIcon} alt="test"></SkillIcon>
-      <SkillIcon src={bootstrapIcon} alt="test"></SkillIcon>
-      <SkillIcon src={pythonIcon} alt="test"></SkillIcon>
-      <SkillIcon src={cIcon} alt="test"></SkillIcon>
-    </DevStackBlock>
+    <Container>
+      <DevStackBlock className="container">
+        <SkillIcon src={htmlIcon} alt="test"></SkillIcon>
+        <SkillIcon src={cssIcon} alt="test"></SkillIcon>
+        <SkillIcon src={jsIcon} alt="test"></SkillIcon>
+        <SkillIcon src={vueIcon} alt="test"></SkillIcon>
+        <SkillIcon src={vuetifyIcon} alt="test"></SkillIcon>
+        <SkillIcon src={reactIcon} alt="test"></SkillIcon>
+        <SkillIcon src={bootstrapIcon} alt="test"></SkillIcon>
+        <SkillIcon src={pythonIcon} alt="test"></SkillIcon>
+        <SkillIcon src={cIcon} alt="test"></SkillIcon>
+      </DevStackBlock>
+    </Container>
   );
 }
 
