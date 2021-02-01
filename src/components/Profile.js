@@ -104,6 +104,11 @@ const LinkBtn = styled.button`
     css`
       background: #e9ecef;
     `}
+
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
 `;
 
 function Profile({ mode }) {

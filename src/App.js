@@ -4,6 +4,9 @@ import Profile from "./components/Profile";
 import Sidebar from "./components/SideBar";
 import { useMediaQuery } from "react-responsive";
 import DevStack from "./components/DevStack";
+import Project from "./components/Project";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -39,6 +42,8 @@ function App() {
     if (isPc) setMode("isPc");
     else if (isTablet) setMode("isTablet");
     else if (isMobile) setMode("isMobile");
+
+    AOS.init();
   }, [isMobile, isPc, isTablet]);
 
   const openSidebar = () => {
@@ -58,10 +63,14 @@ function App() {
     <>
       <GlobalStyle />
 
-      {/* 인포 */}
+      {/* 프로필 */}
       {curPage === "Profile" ? <Profile mode={mode} /> : null}
 
+      {/* 기술 스택 */}
       {curPage === "Dev Stack" ? <DevStack /> : null}
+
+      {/* 프로젝트 */}
+      {curPage === "Project" ? <Project /> : null}
 
       {/* 사이드바 */}
       <Sidebar

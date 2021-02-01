@@ -16,6 +16,11 @@ const Button = styled.button`
     background: #ced4da;
   }
 
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+
   font-size: 24px;
   padding: 0.75rem;
 

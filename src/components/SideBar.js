@@ -48,6 +48,11 @@ const OpenBtn = styled.button`
     background: #ced4da;
   }
 
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+
   cursor: pointer;
   border: 0;
   outline: 0;
@@ -72,6 +77,11 @@ const CloseBtn = styled.button`
 
   &:active {
     background: #ced4da;
+  }
+
+  &:focus {
+    border: 0;
+    outline: 0;
   }
 
   cursor: pointer;
