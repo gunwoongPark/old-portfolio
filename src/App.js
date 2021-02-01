@@ -17,14 +17,7 @@ function App() {
   const [sidebar, setSidebar] = useState(false);
   const [mode, setMode] = useState("");
 
-  const sidebarItem = [
-    "Profile",
-    "Dev Stack",
-    "Time Line",
-    "dummy1",
-    "dummy2",
-    "dummy3",
-  ];
+  const sidebarItem = ["Profile", "Dev Stack", "Time Line"];
 
   const isPc = useMediaQuery({
     query: "(min-width:1024px)",
@@ -40,7 +33,6 @@ function App() {
     if (isPc) setMode("isPc");
     else if (isTablet) setMode("isTablet");
     else if (isMobile) setMode("isMobile");
-
   }, [isMobile, isPc, isTablet]);
 
   const openSidebar = () => {
