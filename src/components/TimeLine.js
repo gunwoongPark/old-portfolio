@@ -60,7 +60,7 @@ function TimeLine() {
       </VerticalTimelineElement>
 
       <VerticalTimelineElement
-        date="2020.09 - 2020.12"
+        date="2020.09 - 2020.123"
         iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         icon={<GiTeacher />}
       >
