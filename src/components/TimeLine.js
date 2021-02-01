@@ -103,7 +103,7 @@ function TimeLine() {
       </VerticalTimelineElement>
 
       <VerticalTimelineElement
-        date="2020. - present"
+        date="2020.10 - present"
         iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
         icon={<ImLab />}
       >
