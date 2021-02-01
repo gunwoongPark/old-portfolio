@@ -4,9 +4,7 @@ import Profile from "./components/Profile";
 import Sidebar from "./components/SideBar";
 import { useMediaQuery } from "react-responsive";
 import DevStack from "./components/DevStack";
-import Project from "./components/Project";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import TimeLine from "./components/TimeLine";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -22,7 +20,7 @@ function App() {
   const sidebarItem = [
     "Profile",
     "Dev Stack",
-    "Project",
+    "Time Line",
     "dummy1",
     "dummy2",
     "dummy3",
@@ -43,7 +41,6 @@ function App() {
     else if (isTablet) setMode("isTablet");
     else if (isMobile) setMode("isMobile");
 
-    AOS.init();
   }, [isMobile, isPc, isTablet]);
 
   const openSidebar = () => {
@@ -70,7 +67,7 @@ function App() {
       {curPage === "Dev Stack" ? <DevStack /> : null}
 
       {/* 프로젝트 */}
-      {curPage === "Project" ? <Project /> : null}
+      {curPage === "Time Line" ? <TimeLine /> : null}
 
       {/* 사이드바 */}
       <Sidebar
