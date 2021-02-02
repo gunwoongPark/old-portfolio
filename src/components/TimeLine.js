@@ -7,33 +7,47 @@ import "react-vertical-timeline-component/style.min.css";
 import { ImLab } from "react-icons/im";
 import { GiTeacher } from "react-icons/gi";
 import { AiOutlineProject } from "react-icons/ai";
+import { CgWebsite } from "react-icons/cg";
+import { SiGithub } from "react-icons/si";
+import { Carousel } from "react-bootstrap";
+import dummy from "../assets/dummy.PNG";
+
+import styled from "styled-components";
+
+const LinkBtnGroup = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+const LinkBtn = styled.button`
+  color: #343a40;
+  background: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+`;
 
 function TimeLine() {
   return (
     <VerticalTimeline>
       <VerticalTimelineElement
         date="2020.02 - 2020.09"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<ImLab />}
       >
         <h3>Intelligent Image Analysis Lab</h3>
         <h4>지능형 영상분석 연구실 연구원 활동</h4>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
       </VerticalTimelineElement>
 
       <VerticalTimelineElement
         date="2020.03 - 2020.06"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<GiTeacher />}
       >
         <h3>셈틀꾼 멘토</h3>
@@ -45,7 +59,7 @@ function TimeLine() {
 
       <VerticalTimelineElement
         date="2020.07 - 2020.10"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<AiOutlineProject />}
       >
         <h3>Semtle Project</h3>
@@ -57,11 +71,32 @@ function TimeLine() {
         </p>
         <p>Vue.js기반, vuetify를 사용하여 개발</p>
         <p>프론트엔드 담당</p>
+
+        <Carousel className="mt-2">
+          <Carousel.Item>
+            <img className="w-100" src={dummy} alt="First slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={dummy} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={dummy} alt="Third slide" />
+          </Carousel.Item>
+        </Carousel>
+
+        <LinkBtnGroup className="mt-2">
+          <LinkBtn>
+            <SiGithub size="25" />
+          </LinkBtn>
+          <LinkBtn>
+            <CgWebsite size="25" />
+          </LinkBtn>
+        </LinkBtnGroup>
       </VerticalTimelineElement>
 
       <VerticalTimelineElement
         date="2020.09 - 2020.12"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<GiTeacher />}
       >
         <h3>셈틀꾼 멘토</h3>
@@ -73,7 +108,7 @@ function TimeLine() {
 
       <VerticalTimelineElement
         date="2020.09 - 2020.12"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<AiOutlineProject />}
       >
         <h3>Vueticky Note Project</h3>
@@ -88,11 +123,32 @@ function TimeLine() {
           <li>Cloud Firestore를 활용한 가상의 DB 구축</li>
         </ul>
         <p>Vue.js기반, vuetify를 사용하여 개발</p>
+
+        <Carousel className="mt-2">
+          <Carousel.Item>
+            <img className="w-100" src={dummy} alt="First slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={dummy} alt="Third slide" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={dummy} alt="Third slide" />
+          </Carousel.Item>
+        </Carousel>
+
+        <LinkBtnGroup className="mt-2">
+          <LinkBtn>
+            <SiGithub size="25" />
+          </LinkBtn>
+          <LinkBtn>
+            <CgWebsite size="25" />
+          </LinkBtn>
+        </LinkBtnGroup>
       </VerticalTimelineElement>
 
       <VerticalTimelineElement
         date="2020.10 - 2020.12"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<GiTeacher />}
       >
         <h3>전공특화 멘토</h3>
@@ -104,22 +160,11 @@ function TimeLine() {
 
       <VerticalTimelineElement
         date="2020.10 - present"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
         icon={<ImLab />}
       >
         <h3>System Software Lab</h3>
         <h4>시스템 소프트웨어 연구실 연구원 활동</h4>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
       </VerticalTimelineElement>
     </VerticalTimeline>
   );
