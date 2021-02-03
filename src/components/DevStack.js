@@ -25,36 +25,38 @@ const SkillIcon = styled.img`
   height: 120px;
   object-fit: cover;
 
-  & + & {
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
+  margin: 20px;
 
   cursor: pointer;
 `;
 
 const DevStackBlock = styled.div`
-  position: absolute;
-  top: 50%;
+  text-align: center;
 
-  transform: translate(0, -50%);
+  margin-top: 300px;
 `;
 
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-name: ${fadeIn};
   animation-fill-mode: forwards;
 `;
 
-const SkillIconBlock = styled.div`
+const Title = styled.h1`
+  font-size: 58px;
+  margin-bottom: 10px;
   text-align: center;
+
+  margin-top: 150px;
 `;
 
-function DevStack() {
+const Badge = styled.div`
+  border-radius: 25%;
+  background: tomato;
+`;
+
+function DevStack({ mode }) {
   const contentsArr = [
     { imgSrc: htmlIcon, tooltipText: "HTML" },
     { imgSrc: cssIcon, tooltipText: "CSS" },
@@ -68,28 +70,19 @@ function DevStack() {
   ];
   return (
     <Container>
-      <DevStackBlock className="container">
-        <div className="row">
-          <div className="col-1"></div>
-
-          <SkillIconBlock className="col-10">
-            {contentsArr.map((el, idx) => {
-              return (
-                <OverlayTrigger
-                  placement={"right"}
-                  overlay={
-                    <Tooltip id={"tooltip-right"}>{el.tooltipText}</Tooltip>
-                  }
-                  key={idx}
-                >
-                  <SkillIcon src={el.imgSrc} alt="test" />
-                </OverlayTrigger>
-              );
-            })}
-          </SkillIconBlock>
-
-          <div className="col-1"></div>
-        </div>
+      <Title>Skills</Title>
+      <DevStackBlock>
+        {contentsArr.map((el, idx) => {
+          return (
+            <OverlayTrigger
+              placement={"top"}
+              overlay={<Tooltip id={"tooltip-right"}>{el.tooltipText}</Tooltip>}
+              key={idx}
+            >
+              <SkillIcon src={el.imgSrc} alt="test" />
+            </OverlayTrigger>
+          );
+        })}
       </DevStackBlock>
     </Container>
   );

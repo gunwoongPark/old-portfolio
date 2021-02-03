@@ -166,6 +166,18 @@ function TimeLine() {
         <h3>System Software Lab</h3>
         <h4>시스템 소프트웨어 연구실 연구원 활동</h4>
       </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        date="2021.02 - 2021.03"
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
+        icon={<GiTeacher />}
+      >
+        <h3>셈틀꾼 멘토</h3>
+        <p>
+          컴퓨터공학과 학술동아리 '셈틀꾼'에서 전 회원들을 대상으로 자바스크립트
+          멘토를 진행함.
+        </p>
+      </VerticalTimelineElement>
     </VerticalTimeline>
   );
 }

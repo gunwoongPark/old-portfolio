@@ -56,7 +56,7 @@ function App() {
       {curPage === "Profile" ? <Profile mode={mode} /> : null}
 
       {/* 기술 스택 */}
-      {curPage === "Dev Stack" ? <DevStack /> : null}
+      {curPage === "Dev Stack" ? <DevStack mode={mode} /> : null}
 
       {/* 프로젝트 */}
       {curPage === "Time Line" ? <TimeLine /> : null}
