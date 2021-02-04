@@ -14,6 +14,8 @@ import dummy from "../assets/dummy.PNG";
 
 import styled from "styled-components";
 
+import "../style/TimeLine.css";
+
 const LinkBtnGroup = styled.div`
   width: 100%;
   display: flex;
@@ -35,7 +37,7 @@ const LinkBtn = styled.button`
 
 function TimeLine() {
   return (
-    <VerticalTimeline>
+    <VerticalTimeline className="timelineBlock">
       <VerticalTimelineElement
         date="2020.02 - 2020.09"
         iconStyle={{ background: " #ffa8a8", color: "#fff" }}

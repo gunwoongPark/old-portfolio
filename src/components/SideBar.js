@@ -186,7 +186,7 @@ function SideBar({
         <CloseBtn onClick={closeSlidebar} disappear={!visible}>
           <MdNavigateBefore size="40" />
         </CloseBtn>
-        <SidebarBlock disappear={!visible}>
+        <SidebarBlock disappear={!visible} style={{ zIndex: "10" }}>
           <BtnGroup>
             {sidebarItem.map((item, index) => (
               <BtnItem

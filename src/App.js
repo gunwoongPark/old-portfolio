@@ -5,7 +5,7 @@ import Sidebar from "./components/SideBar";
 import { useMediaQuery } from "react-responsive";
 import DevStack from "./components/DevStack";
 import TimeLine from "./components/TimeLine";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -19,7 +19,7 @@ function App() {
   const [mode, setMode] = useState("");
 
   const sidebarItem = [
-    { title: "Profile", link: "/" },
+    { title: "Profile", link: "/Portfolio" },
     { title: "Dev Stack", link: "/devstack" },
     { title: "Time Line", link: "/timeline" },
   ];
@@ -38,9 +38,7 @@ function App() {
     if (isPc) setMode("isPc");
     else if (isTablet) setMode("isTablet");
     else if (isMobile) setMode("isMobile");
-
-    console.log(curPage);
-  }, [isMobile, isPc, isTablet, curPage]);
+  }, [isMobile, isPc, isTablet]);
 
   const openSidebar = () => {
     setSidebar(true);
@@ -59,7 +57,7 @@ function App() {
     <>
       <GlobalStyle />
 
-      <Route exact path="/">
+      <Route exact path="/Portfolio">
         <Profile mode={mode} />
       </Route>
 
@@ -70,12 +68,6 @@ function App() {
       <Route exact path="/timeline">
         <TimeLine />
       </Route>
-
-      {/* 기술 스택 */}
-      {/* {curPage === "Dev Stack" ? <DevStack mode={mode} /> : null} */}
-
-      {/* 프로젝트 */}
-      {/* {curPage === "Time Line" ? <TimeLine /> : null} */}
 
       {/* 사이드바 */}
       <Sidebar

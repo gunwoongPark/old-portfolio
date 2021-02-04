@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Button = styled.button`
+  margin-top: 1rem;
+
   width: 100%;
   background: #e9ecef;
   outline: 0;
@@ -28,12 +30,12 @@ const Button = styled.button`
 `;
 
 const CheckedBtn = styled.button`
+  margin-top: 1rem;
+
   width: 100%;
   background: #ffa8a8;
   outline: 0;
   border: 0;
-
-  margin: 1rem 0 0 0;
 
   &:hover {
     background: #ffc9c9;
