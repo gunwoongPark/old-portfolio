@@ -120,7 +120,7 @@ function Profile({ mode }) {
         <UserInfo uName={true} mode={mode}>
           Park Gun Woong
         </UserInfo>
-        <UserInfo mode={mode}>Prospective Front-End Developer</UserInfo>
+        <UserInfo mode={mode}>Front-End Developer</UserInfo>
         <UserInfo mode={mode}>97.08.07</UserInfo>
         <UserInfo mode={mode}>금오공과대학교</UserInfo>
         <UserInfo mode={mode}>컴퓨터공학과</UserInfo>
