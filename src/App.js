@@ -5,7 +5,6 @@ import Sidebar from "./components/SideBar";
 import { useMediaQuery } from "react-responsive";
 import DevStack from "./components/DevStack";
 import TimeLine from "./components/TimeLine";
-import { Route } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
 body{
@@ -18,11 +17,7 @@ function App() {
   const [sidebar, setSidebar] = useState(false);
   const [mode, setMode] = useState("");
 
-  const sidebarItem = [
-    { title: "Profile", link: "/Portfolio" },
-    { title: "Dev Stack", link: "/devstack" },
-    { title: "Time Line", link: "/timeline" },
-  ];
+  const sidebarItem = ["Profile", "Dev Stack", "Time Line"];
 
   const isPc = useMediaQuery({
     query: "(min-width:1024px)",
@@ -57,17 +52,9 @@ function App() {
     <>
       <GlobalStyle />
 
-      <Route exact path="/Portfolio">
-        <Profile mode={mode} />
-      </Route>
-
-      <Route exact path="/devstack">
-        <DevStack mode={mode} />
-      </Route>
-
-      <Route exact path="/timeline">
-        <TimeLine />
-      </Route>
+      {curPage === "Profile" ? <Profile mode={mode} /> : null}
+      {curPage === "Dev Stack" ? <DevStack mode={mode} /> : null}
+      {curPage === "Time Line" ? <TimeLine /> : null}
 
       {/* 사이드바 */}
       <Sidebar

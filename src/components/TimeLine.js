@@ -71,7 +71,7 @@ function TimeLine() {
           프로젝트 공고, 게시, 질문 사이트 등을 구현하고 관리자 페이지를 통한
           인원관리 구현
         </p>
-        <p>Vue.js기반, vuetify를 사용하여 개발</p>
+        <p>Vue.js기반, Vuetify를 사용하여 개발</p>
         <p>프론트엔드 담당</p>
 
         <Carousel className="mt-2">
@@ -87,12 +87,20 @@ function TimeLine() {
         </Carousel>
 
         <LinkBtnGroup className="mt-2">
-          <LinkBtn>
-            <SiGithub size="25" />
-          </LinkBtn>
-          <LinkBtn>
-            <CgWebsite size="25" />
-          </LinkBtn>
+          <a
+            href="https://github.com/gunwoongPark/semtleProject-front"
+            target="__blank"
+          >
+            <LinkBtn>
+              <SiGithub size="25" />
+            </LinkBtn>
+          </a>
+
+          <a href="http://sbmi.iptime.org/" target="__blank">
+            <LinkBtn>
+              <CgWebsite size="25" />
+            </LinkBtn>
+          </a>
         </LinkBtnGroup>
       </VerticalTimelineElement>
 
@@ -139,12 +147,20 @@ function TimeLine() {
         </Carousel>
 
         <LinkBtnGroup className="mt-2">
-          <LinkBtn>
-            <SiGithub size="25" />
-          </LinkBtn>
-          <LinkBtn>
-            <CgWebsite size="25" />
-          </LinkBtn>
+          <a
+            href="https://github.com/gunwoongPark/Vueticky-Note"
+            target="__blank"
+          >
+            <LinkBtn>
+              <SiGithub size="25" />
+            </LinkBtn>
+          </a>
+
+          <a href="vueticky-note-b08f1.web.app" target="__blank">
+            <LinkBtn>
+              <CgWebsite size="25" />
+            </LinkBtn>
+          </a>
         </LinkBtnGroup>
       </VerticalTimelineElement>
 
@@ -167,6 +183,19 @@ function TimeLine() {
       >
         <h3>System Software Lab</h3>
         <h4>시스템 소프트웨어 연구실 연구원 활동</h4>
+      </VerticalTimelineElement>
+
+      <VerticalTimelineElement
+        date="2020.12 - 2021.02"
+        iconStyle={{ background: " #ffa8a8", color: "#fff" }}
+        icon={<ImLab />}
+      >
+        <h3>System Software Lab</h3>
+        <h4>레지던트 프로그램 활동</h4>
+        <p>
+          연구실 내 연구과제, 산학과제, 특수 장비 관리, 산업체 기술지도 등의
+          다양한 활동을 참여하여 전공분야 역량 강화.
+        </p>
       </VerticalTimelineElement>
 
       <VerticalTimelineElement

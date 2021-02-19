@@ -133,7 +133,6 @@ function Profile({ mode }) {
             </LinkBtn>
           </a>
 
-          <a href=""></a>
           <LinkBtn mode={mode}>
             <AiFillInstagram size="50" />
           </LinkBtn>

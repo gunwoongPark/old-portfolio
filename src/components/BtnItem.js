@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Button = styled.button`
   margin-top: 1rem;
 
-  width: 100%;
   background: #e9ecef;
   outline: 0;
   border: 0;
@@ -32,7 +30,6 @@ const Button = styled.button`
 const CheckedBtn = styled.button`
   margin-top: 1rem;
 
-  width: 100%;
   background: #ffa8a8;
   outline: 0;
   border: 0;
@@ -59,14 +56,10 @@ const CheckedBtn = styled.button`
 function BtnItem({ children, selectBtn, selectedMenu }) {
   return (
     <>
-      {selectedMenu === children.title ? (
-        <Link to={children.link} style={{ textAlign: "center" }}>
-          <CheckedBtn onClick={selectBtn}>{children.title}</CheckedBtn>
-        </Link>
+      {selectedMenu === children ? (
+        <CheckedBtn onClick={selectBtn}>{children}</CheckedBtn>
       ) : (
-        <Link to={children.link} style={{ textAlign: "center" }}>
-          <Button onClick={selectBtn}>{children.title}</Button>
-        </Link>
+        <Button onClick={selectBtn}>{children}</Button>
       )}
     </>
   );

@@ -51,11 +51,6 @@ const Title = styled.h1`
   margin-top: 150px;
 `;
 
-const Badge = styled.div`
-  border-radius: 25%;
-  background: tomato;
-`;
-
 function DevStack({ mode }) {
   const contentsArr = [
     { imgSrc: htmlIcon, tooltipText: "HTML" },
